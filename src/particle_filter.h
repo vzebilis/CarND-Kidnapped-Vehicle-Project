@@ -63,7 +63,7 @@ class ParticleFilter {
    * @param predicted Vector of predicted landmark observations
    * @param observations Vector of landmark observations
    */
-  void dataAssociation(std::vector<LandmarkObs> predicted, 
+  void dataAssociation(const std::vector<Map::single_landmark_s> & predicted, 
                        std::vector<LandmarkObs>& observations);
   
   /**
@@ -120,6 +120,9 @@ class ParticleFilter {
   
   // Vector of weights of all particles
   std::vector<double> weights; 
+
+  // Max weight of particles
+  double maxWeight;
 };
 
 #endif  // PARTICLE_FILTER_H_
